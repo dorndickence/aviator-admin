@@ -73,11 +73,11 @@ const Header = () => {
                   <a href="./account" className="link link-hover">
                     Account
                   </a>
-                  <a href="./players" className="link link-hover">
-                    Players
-                  </a>
                   <a href="./withdraw" className="link link-hover">
                     Withdraw
+                  </a>
+                  <a href="./withdraw-partner" className="link link-hover">
+                    Partner Withdraw
                   </a>
                   <a href="./logout" className="link link-hover">
                     Logout
