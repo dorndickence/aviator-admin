@@ -14,6 +14,7 @@ import Contact from "./Components/Pages/Contact";
 import Cookies from "js-cookie";
 import Withdraw from "./Components/Pages/Withdraw";
 import WithdrawPartner from "./Components/Pages/WithdrawPartner";
+import Signal from "./Components/Signal";
 
 import Logout from "./Components/Pages/Logout";
 import Logout2 from "./Components/Pages/Logout2";
@@ -24,7 +25,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      {currentPath !== "/logout" && <Header />}
+      {currentPath !== "/logout" && currentPath !== "/signal" && <Header />}
       <Routes>
         <Route index element={<Home />} />
         {Cookies.get("token") ? (
@@ -32,7 +33,7 @@ function App() {
             <Route path="logout" element={<Logout />} />
             <Route path="withdraw" element={<Withdraw />} />
             <Route path="withdraw-partner" element={<WithdrawPartner />} />
-
+            <Route path="signal" element={<Signal />} />
             <Route path="account" element={<Account />} />
             <Route path="players" element={<Players />} />
           </>
@@ -48,7 +49,7 @@ function App() {
         {/* <Route path="*" element={<NoPage />} /> */}
         <Route path="contact" element={<Contact />} />
       </Routes>
-      {currentPath !== "/logout" && <Footer />}
+      {currentPath !== "/logout" && currentPath !== "/signal" && <Footer />}
     </BrowserRouter>
   );
 }
